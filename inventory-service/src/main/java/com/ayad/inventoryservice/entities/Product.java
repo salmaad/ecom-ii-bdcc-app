@@ -6,7 +6,7 @@ import lombok.*;
 
 @Entity
 @NoArgsConstructor @AllArgsConstructor @Getter
-@Setter @Builder
+@Setter @Builder @ToString
 public class Product {
     @Id
     private String id;
