@@ -1,0 +1,18 @@
+package com.ayad.billingservice.entities;
+
+import com.ayad.billingservice.model.Product;
+import jakarta.persistence.*;
+import lombok.*;
+
+@Entity @NoArgsConstructor @AllArgsConstructor @Builder @Getter
+@Setter
+public class ProductItem {
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    private String productId;
+    @ManyToOne
+    private Bill bill;
+    private int quantity;
+    private double unitPrice;
+    @Transient private Product product;
+}
